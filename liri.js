@@ -125,7 +125,8 @@ function getMovie() {
             responseType: 'json'
         }).then(function (response) {
             //console.log(response.data);
-            let releaseDate = response.data.Released;
+            let dateObj = new Date(response.data.Released);
+            let releaseDate = dateObj.toISOString();
             let releaseYear = moment(releaseDate).format('YYYY');
             console.log(`
             Title: ${response.data.Title}

@@ -22,13 +22,13 @@ String.prototype.toProperCase = function () {
 };
 
 if (command[2] === 'concert-this') {
-    artist = command[3];
+    //artist = command[3];
     getConcert();
 } else if (command[2] === 'spotify-this-song') {
-    song = command[3];
+    //song = command[3];
     getSong();
 } else if (command[2] === 'movie-this') {
-    movie = command[3];
+    //movie = command[3];
     getMovie();
 } else if (command[2] === 'do-what-it-says') {
     fs.readFile('random.txt', 'utf8', function (err, data) {
@@ -52,8 +52,14 @@ if (command[2] === 'concert-this') {
 }
 
 function getSong() {
-    //console.log(command);
-    if (song !== undefined) {
+    for (var i = 3; i < command.length; i++) {
+        if (i > 3 && i < command.length) {
+            song = song + "+" + command[i];
+        } else {
+            song += command[i];
+        }
+    }
+    if (song !== '') {
         spotify.search({
             type: 'track',
             query: song,
@@ -62,14 +68,16 @@ function getSong() {
             //console.log(response);
             let songObj = response.tracks.items[0];
             let artistName = songObj.album.artists[0].name;
-            let displaySong = song.toProperCase();
-            //console.log(songObj);
+            let displaySong = songObj.name;
+            console.log(songObj);
             console.log(`
             Artist: ${artistName}
             Song title: ${displaySong}
             Album Name: ${songObj.album.name}
             Preview URL: ${songObj.preview_url}
             `);
+        }).catch(err => {
+            console.log(err);
         });
 
     } else {
@@ -93,7 +101,14 @@ function getSong() {
 }
 
 function getConcert() {
-    if (artist !== undefined) {
+    for (var i = 3; i < command.length; i++) {
+        if (i > 3 && i < command.length) {
+            artist = artist + "+" + command[i];
+        } else {
+            artist += command[i];
+        }
+    }
+    if (artist !== '') {
         axios({
             method: 'get',
             url: `https://rest.bandsintown.com/artists/${artist}/events?app_id=codingbootcamp`,
@@ -107,18 +122,28 @@ function getConcert() {
                 console.log(`
                 Venue Name: ${showArr[i].venue.name}
                 Venue Location: ${showArr[i].venue.city}, ${showArr[i].venue.country}
-                Show Date: Venue Location: ${showDate}
+                Show Date: ${showDate}
                 `);
-            };
+            }
+        }).catch(err => {
+            console.log(err);
         });
     } else {
-        console.log("The artist name is not defined. Please try a different artist (remeber to use quotes around the artist's name)");
+        console.log("The artist name is not defined. Please try a different artist");
     };
 
 }
 
 function getMovie() {
-    if ( movie !== '') {
+    for (var i = 3; i < command.length; i++) {
+        if (i > 3 && i < command.length) {
+            movie = movie + "+" + command[i];
+        } else {
+            movie += command[i];
+
+        }
+    }
+    if (movie !== '') {
         axios({
             method: 'get',
             url: `http://www.omdbapi.com/?apikey=c3f10979&t=${movie}`,
@@ -138,6 +163,8 @@ function getMovie() {
             Plot: ${response.data.Plot}
             Actors: ${response.data.Actors}
             `)
+        }).catch(err => {
+            console.log(err);
         });
     } else {
         let movie = 'Mr. Nobody';
@@ -147,7 +174,8 @@ function getMovie() {
             responseType: 'json'
         }).then(function (response) {
             //console.log(response.data);
-            let releaseDate = response.data.Released;
+            let dateObj = new Date(response.data.Released);
+            let releaseDate = dateObj.toISOString();
             let releaseYear = moment(releaseDate).format('YYYY');
             console.log(`
             Title: ${response.data.Title}
@@ -159,10 +187,13 @@ function getMovie() {
             Plot: ${response.data.Plot}
             Actors: ${response.data.Actors}
             `)
+        }).catch(err => {
+            console.log(err);
         });
     }
 
 }
+
 
 
 
@@ -298,5 +329,3 @@ function getMovie() {
 //         }
 //     });
 // };
-
-

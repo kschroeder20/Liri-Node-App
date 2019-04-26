@@ -15,11 +15,11 @@ let artist = '';
 let movie = '';
 
 let command = process.argv;
-String.prototype.toProperCase = function () {
-    return this.replace(/\w\S*/g, function (txt) {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    });
-};
+// String.prototype.toProperCase = function () {
+//     return this.replace(/\w\S*/g, function (txt) {
+//         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+//     });
+// };
 
 if (command[2] === 'concert-this') {
     //artist = command[3];
@@ -69,13 +69,25 @@ function getSong() {
             let songObj = response.tracks.items[0];
             let artistName = songObj.album.artists[0].name;
             let displaySong = songObj.name;
-            console.log(songObj);
+            //console.log(songObj);
             console.log(`
             Artist: ${artistName}
             Song title: ${displaySong}
             Album Name: ${songObj.album.name}
             Preview URL: ${songObj.preview_url}
             `);
+
+            fs.appendFile('log.txt', `
+            Artist: ${artistName}
+            Song title: ${displaySong}
+            Album Name: ${songObj.album.name}
+            Preview URL: ${songObj.preview_url}
+
+            `, (err) => {
+                if (err) throw err;
+                console.log('The "data to append" was appended to log.txt!');
+            });
+
         }).catch(err => {
             console.log(err);
         });
@@ -96,6 +108,17 @@ function getSong() {
             Album Name: ${songObj.album.name}
             Preview URL: ${songObj.preview_url}
             `);
+
+            fs.appendFile('log.txt', `
+            Artist: ${artistName}
+            Song title: 'The Sign'
+            Album Name: ${songObj.album.name}
+            Preview URL: ${songObj.preview_url}
+
+            `, (err) => {
+                if (err) throw err;
+                console.log('The "data to append" was appended to log.txt!');
+            });
         });
     }
 }
@@ -120,10 +143,21 @@ function getConcert() {
                 let showDate = moment(orgShowDate).format('L');
 
                 console.log(`
+                Show Date: ${showArr[i].lineup}
                 Venue Name: ${showArr[i].venue.name}
                 Venue Location: ${showArr[i].venue.city}, ${showArr[i].venue.country}
                 Show Date: ${showDate}
                 `);
+
+                fs.appendFile('log.txt', `
+                Lineup: ${showArr[i].lineup}
+                Venue Name: ${showArr[i].venue.name}
+                Venue Location: ${showArr[i].venue.city}, ${showArr[i].venue.country}
+                Show Date: ${showDate}
+                `, (err) => {
+                    if (err) throw err;
+                });
+
             }
         }).catch(err => {
             console.log(err);
@@ -162,7 +196,21 @@ function getMovie() {
             Language: ${response.data.Language}
             Plot: ${response.data.Plot}
             Actors: ${response.data.Actors}
-            `)
+            `);
+
+            fs.appendFile('log.txt', `
+            Title: ${response.data.Title}
+            Year Released: ${releaseYear}
+            IMDB Rating: ${response.data.Ratings[0].Value}
+            RottenTomatoes Rating: ${response.data.Ratings[1].Value}
+            Country: ${response.data.Country}
+            Language: ${response.data.Language}
+            Plot: ${response.data.Plot}
+            Actors: ${response.data.Actors}
+                `, (err) => {
+                if (err) throw err;
+            });
+
         }).catch(err => {
             console.log(err);
         });
@@ -186,7 +234,21 @@ function getMovie() {
             Language: ${response.data.Language}
             Plot: ${response.data.Plot}
             Actors: ${response.data.Actors}
-            `)
+            `);
+
+            fs.appendFile('log.txt', `
+            Title: ${response.data.Title}
+            Year Released: ${releaseYear}
+            IMDB Rating: ${response.data.Ratings[0].Value}
+            RottenTomatoes Rating: ${response.data.Ratings[1].Value}
+            Country: ${response.data.Country}
+            Language: ${response.data.Language}
+            Plot: ${response.data.Plot}
+            Actors: ${response.data.Actors}
+                `, (err) => {
+                if (err) throw err;
+                });
+            
         }).catch(err => {
             console.log(err);
         });

@@ -1,42 +1,128 @@
 
-                Show Date: Drake
-                Venue Name: Ziggo Dome
-                Venue Location: Amsterdam, Netherlands
-                Show Date: 04/26/2019
-                
-                Show Date: Drake
+                Lineup: Drake
                 Venue Name: XS Nightclub
                 Venue Location: Las Vegas, United States
                 Show Date: 05/04/2019
                 
-                Show Date: Drake,Satta,Salis
-                Venue Name: Alexanderplatz
-                Venue Location: Roma, Italy
-                Show Date: 05/09/2019
-                
-                Show Date: Drake
+                Lineup: Drake
                 Venue Name: XS Nightclub
                 Venue Location: Las Vegas, United States
                 Show Date: 05/18/2019
                 
-                Show Date: Drake
-                Venue Name: August Hall
-                Venue Location: San Francisco, United States
-                Show Date: 06/15/2019
-                
-                Show Date: Drake,Red Hot Chili Peppers,Muse,Foo Fighters,Bon Jovi,Slayer,Iron Maiden,Whitesnake,King Crimson,Imagine Dragons,Xenia,Jessie J,Charlie Puth,Black Eyed Peas -,Robin Schulz,P!nk
+                Lineup: Drake,Red Hot Chili Peppers,Muse,Foo Fighters,Bon Jovi,Slayer,Iron Maiden,Whitesnake,King Crimson,Imagine Dragons,Xenia,Jessie J,Charlie Puth,Black Eyed Peas -,Robin Schulz,P!nk
                 Venue Name: City of Rock
                 Venue Location: Rio De Janeiro, Brazil
                 Show Date: 09/27/2019
                 
-            Title: Mr. Nobody
-            Year Released: 2013
-            IMDB Rating: 7.8/10
-            RottenTomatoes Rating: 67%
-            Country: Belgium, Germany, Canada, France, USA, UK
-            Language: English, Mohawk
-            Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
-            Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+                Lineup: Foo Fighters
+                Venue Name: Epicenter Festival
+                Venue Location: Rockingham, United States
+                Show Date: 05/12/2019
+                
+                Lineup: Foo Fighters
+                Venue Name: The Fillmore New Orleans
+                Venue Location: New Orleans, United States
+                Show Date: 05/15/2019
+                
+                Lineup: Foo Fighters,Frank Carter & The Rattlesnakes
+                Venue Name: Pula Arena
+                Venue Location: Pula, Croatia
+                Show Date: 06/19/2019
+                
+                Lineup: Foo Fighters
+                Venue Name: Southside Festival
+                Venue Location: Neuhausen Ob Eck, Germany
+                Show Date: 06/21/2019
+                
+                Lineup: Foo Fighters
+                Venue Name: Hurricane Festival
+                Venue Location: Scheeßel, Germany
+                Show Date: 06/23/2019
+                
+                Lineup: Foo Fighters,The Minds of 99,Frank Carter & The Rattlesnakes
+                Venue Name: Faengslet
+                Venue Location: Horsens, Denmark
+                Show Date: 06/25/2019
+                
+                Lineup: Foo Fighters,Kvelertak,Frank Carter & The Rattlesnakes
+                Venue Name: Koengen Fortress
+                Venue Location: Bergen, Norway
+                Show Date: 06/27/2019
+                
+                Lineup: Foo Fighters
+                Venue Name: Lollapalooza Stockholm (28-29 June)
+                Venue Location: Stockholm, Sweden
+                Show Date: 06/29/2019
+                
+                Lineup: Foo Fighters
+                Venue Name: Sziget Festival
+                Venue Location: Budapest, Hungary
+                Show Date: 08/13/2019
+                
+                Lineup: Foo Fighters,Slaves,Frank Carter & The Rattlesnakes,The Van T's,Hot Milk
+                Venue Name: Glasgow Summer Sessions
+                Venue Location: Glasgow, United Kingdom
+                Show Date: 08/17/2019
+                
+                Lineup: Foo Fighters,Frank Carter & The Rattlesnakes,Hot Milk
+                Venue Name: Vital Festival
+                Venue Location: Belfast, United Kingdom
+                Show Date: 08/19/2019
+                
+                Lineup: Foo Fighters,Frank Carter & The Rattlesnakes,Hot Milk
+                Venue Name: RDS Arena
+                Venue Location: Dublin, Ireland
+                Show Date: 08/21/2019
+                
+                Lineup: Foo Fighters
+                Venue Name: Leeds Festival
+                Venue Location: Leeds, United Kingdom
+                Show Date: 08/23/2019
+                
+                Lineup: Foo Fighters
+                Venue Name: Reading Festival
+                Venue Location: Reading, United Kingdom
+                Show Date: 08/25/2019
+                
+                Lineup: Foo Fighters
+                Venue Name: Bourbon and Beyond
+                Venue Location: Louisville, United States
+                Show Date: 09/20/2019
+                
+                Lineup: Foo Fighters
+                Venue Name: Pilgrimage Festival
+                Venue Location: Franklin, United States
+                Show Date: 09/22/2019
+                
+                Lineup: Foo Fighters
+                Venue Name: Rock in Rio
+                Venue Location: Rio De Janeiro, Brazil
+                Show Date: 09/28/2019
+                
+                Lineup: Foo Fighters,Weezer,Tenacious D
+                Venue Name: El Campin Stadium
+                Venue Location: Bogotá, Colombia
+                Show Date: 10/01/2019
+                
+                Lineup: Foo Fighters,Weezer
+                Venue Name: Estadio Nacional de Costa Rica
+                Venue Location: San José, Costa Rica
+                Show Date: 10/04/2019
+                
+                Lineup: Foo Fighters,Frank Carter & The Rattlesnakes
+                Venue Name: Pula Arena
+                Venue Location: Pula, Croatia
+                Show Date: 06/18/2019
+                
+                Lineup: Foo Fighters
+                Venue Name: The Fillmore New Orleans
+                Venue Location: New Orleans, United States
+                Show Date: 05/16/2019
+                
+                Lineup: Foo Fighters
+                Venue Name: Sonic Temple Festival (May 17-19)
+                Venue Location: Columbus, United States
+                Show Date: 05/19/2019
                 
             Title: The Lion King
             Year Released: 1994
@@ -46,4 +132,34 @@
             Language: English, Swahili, Xhosa, Zulu
             Plot: A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father's death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.
             Actors: Rowan Atkinson, Matthew Broderick, Niketa Calame-Harris, Jim Cummings
+                
+            Artist: John Denver
+            Song title: Take Me Home, Country Roads - Rerecorded
+            Album Name: The John Denver Collection, Vol. 1: Take Me Home Country Roads
+            Preview URL: https://p.scdn.co/mp3-preview/ec43998cba1a71480be11c069a68197db2c75928?cid=e5aed161c70d4a32ba17c8056e923a3c
+
+            
+            Title: Mr. Nobody
+            Year Released: 2013
+            IMDB Rating: 7.8/10
+            RottenTomatoes Rating: 67%
+            Country: Belgium, Germany, Canada, France, USA, UK
+            Language: English, Mohawk
+            Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+            Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+                
+            Artist: Ace of Base
+            Song title: 'The Sign'
+            Album Name: The Sign (US Album) [Remastered]
+            Preview URL: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=e5aed161c70d4a32ba17c8056e923a3c
+
+            
+            Title: Creed
+            Year Released: 2015
+            IMDB Rating: 7.6/10
+            RottenTomatoes Rating: 95%
+            Country: USA
+            Language: English, Spanish
+            Plot: The former World Heavyweight Champion Rocky Balboa serves as a trainer and mentor to Adonis Johnson, the son of his late friend and former rival Apollo Creed.
+            Actors: Michael B. Jordan, Sylvester Stallone, Tessa Thompson, Phylicia Rashad
                 

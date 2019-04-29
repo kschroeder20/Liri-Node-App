@@ -7,7 +7,6 @@ let moment = require('moment')
 let axios = require('axios');
 let fs = require('fs');
 
-
 let spotify = new Spotify(keys.spotify);
 
 let song = '';
@@ -15,27 +14,22 @@ let artist = '';
 let movie = '';
 
 let command = process.argv;
-// String.prototype.toProperCase = function () {
-//     return this.replace(/\w\S*/g, function (txt) {
-//         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-//     });
-// };
-
+//Take what the user types in and run the appropriate function
 if (command[2] === 'concert-this') {
-    //artist = command[3];
     getConcert();
 } else if (command[2] === 'spotify-this-song') {
-    //song = command[3];
     getSong();
 } else if (command[2] === 'movie-this') {
-    //movie = command[3];
     getMovie();
 } else if (command[2] === 'do-what-it-says') {
+    //Read the random.txt file
     fs.readFile('random.txt', 'utf8', function (err, data) {
         if (err) {
             console.log(err);
         } else {
+            //split the random.txt by the comma an dput it in an array
             let dataArr = data.split(',');
+            //run the appropriate funciton based on the command in the random.txt file
             if (dataArr[0] === 'concert-this') {
                 artist = dataArr[1];
                 getConcert();
@@ -52,6 +46,7 @@ if (command[2] === 'concert-this') {
 }
 
 function getSong() {
+    //if the song is more than 1 word, add '+' signs inbetween words
     for (var i = 3; i < command.length; i++) {
         if (i > 3 && i < command.length) {
             song = song + "+" + command[i];
@@ -59,17 +54,17 @@ function getSong() {
             song += command[i];
         }
     }
+    //if song exists, run the spotify npm package to pull the song and console log the info
+    //if song does not exsist, pull the song info for 'The Sign of Base'
     if (song !== '') {
         spotify.search({
             type: 'track',
             query: song,
             limit: 1
         }).then(function (response) {
-            //console.log(response);
             let songObj = response.tracks.items[0];
             let artistName = songObj.album.artists[0].name;
             let displaySong = songObj.name;
-            //console.log(songObj);
             console.log(`
             Artist: ${artistName}
             Song title: ${displaySong}
@@ -98,10 +93,8 @@ function getSong() {
             query: 'The Sign Ace of Base',
             limit: 1
         }).then(function (response) {
-            //console.log(response);
             let songObj = response.tracks.items[0];
             let artistName = songObj.album.artists[0].name;
-            //console.log(songObj);
             console.log(`
             Artist: ${artistName}
             Song title: 'The Sign'
@@ -122,7 +115,7 @@ function getSong() {
         });
     }
 }
-
+//if the artist is more than 1 word, add '+' signs inbetween words
 function getConcert() {
     for (var i = 3; i < command.length; i++) {
         if (i > 3 && i < command.length) {
@@ -131,9 +124,12 @@ function getConcert() {
             artist += command[i];
         }
     }
+    //if artist exists, run axios function to pull the artist and console log the info
+    //if song does not exsist, console log a message that the artist doesn't exist
     if (artist !== '') {
         axios({
             method: 'get',
+            //Change API key below
             url: `https://rest.bandsintown.com/artists/${artist}/events?app_id=codingbootcamp`,
             responseType: 'json'
         }).then(function (response) {
@@ -143,7 +139,7 @@ function getConcert() {
                 let showDate = moment(orgShowDate).format('L');
 
                 console.log(`
-                Show Date: ${showArr[i].lineup}
+                Lineup: ${showArr[i].lineup}
                 Venue Name: ${showArr[i].venue.name}
                 Venue Location: ${showArr[i].venue.city}, ${showArr[i].venue.country}
                 Show Date: ${showDate}
@@ -157,29 +153,29 @@ function getConcert() {
                 `, (err) => {
                     if (err) throw err;
                 });
-
             }
         }).catch(err => {
             console.log(err);
         });
     } else {
         console.log("The artist name is not defined. Please try a different artist");
-    };
-
+    }
 }
-
+//if movie exists, run axios function to pull the artist and console log the info
+//if song does not exsist, pull information for the movie 'Mr. Nobody'
+//uses IMDB API
 function getMovie() {
     for (var i = 3; i < command.length; i++) {
         if (i > 3 && i < command.length) {
             movie = movie + "+" + command[i];
         } else {
             movie += command[i];
-
         }
     }
     if (movie !== '') {
         axios({
             method: 'get',
+            //Change API key below
             url: `http://www.omdbapi.com/?apikey=c3f10979&t=${movie}`,
             responseType: 'json'
         }).then(function (response) {
@@ -247,8 +243,8 @@ function getMovie() {
             Actors: ${response.data.Actors}
                 `, (err) => {
                 if (err) throw err;
-                });
-            
+            });
+
         }).catch(err => {
             console.log(err);
         });
@@ -262,7 +258,7 @@ function getMovie() {
 
 
 
-
+//------------------------------ Ability to incorporate Inquirier to this project----------------------//////
 // function getSong() {
 //     inquirer.prompt([{
 //         type: "input",

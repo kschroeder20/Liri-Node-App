@@ -1,5 +1,7 @@
 # liri-node-app
 
+Demo: https://drive.google.com/file/d/12AkwpysgPzjp-jttdYIu50IppShbWvOZ/view?usp=sharing
+
 LIRI is a Language Interpretation and Recognition Interface.
 Use LIRI to get information about the song or movie of your
 choice and it can get an artist's upcoming concert information
@@ -39,7 +41,7 @@ This will search the Bands in Town Artist Events API (`"https://rest.bandsintown
 
      * Date of the Event (use moment to format this as "MM/DD/YYYY")
 
-**You must replace the Bands in Town API key on line 99**
+**You must replace the Bands in Town API key on line 133**
 
 `node liri.js concert-this`
 
@@ -78,7 +80,7 @@ This will output the following information to your terminal/bash window:
 
    * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
 
-   **You must replace the OMDB API key on line 124**
+   **You must replace the OMDB API key on line 179**
 
 `node liri.js movie-this "Star Wars"`
 
@@ -87,3 +89,5 @@ This will output the following information to your terminal/bash window:
 Gets text inside a the radnom.txt and does what it says:
 
 `node liri.js do-what-it-says`
+
+### All comands write to the log.text file
